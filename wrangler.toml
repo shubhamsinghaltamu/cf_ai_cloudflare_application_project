@@ -1,0 +1,16 @@
+name = "cf_ai_chat"
+main = "src/index.ts"
+compatibility_date = "2024-04-05"
+
+[ai]
+binding = "AI"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "chat_db"
+database_id = "d14ac220-e50b-40d3-95a2-01757101fc2a"
+preview_database_id = "local-chat-db-preview"
+
+[assets]
+directory = "public"
+binding = "ASSETS"
