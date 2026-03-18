@@ -1,0 +1,24 @@
+{
+  "name": "cf_ai_chat",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev:worker": "wrangler dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:worker\" \"npm run dev:frontend\"",
+    "build:frontend": "cd frontend && npm run build",
+    "deploy": "npm run build:frontend && wrangler deploy",
+    "cf-typegen": "wrangler types",
+    "db:init": "wrangler d1 execute chat_db --local --file=./schema.sql"
+  },
+  "dependencies": {
+    "hono": "^4.2.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240405.0",
+    "concurrently": "^9.2.1",
+    "typescript": "^5.4.5",
+    "wrangler": "^3.50.0"
+  }
+}
