@@ -1,15 +1,15 @@
-# cf_ai_chat
+# cf_ai_cloudflare_application_project
 
 This is a complete Cloudflare AI-powered chat application built for the AI assignment.
 
 ## Live Demo
 The application is deployed and currently live at: **[https://cf_ai_chat.shubhamsinghaltamu.workers.dev](https://cf_ai_chat.shubhamsinghaltamu.workers.dev)**
 
-
 ## Components Used
 - **LLM**: Cloudflare Workers AI (`@cf/meta/llama-3.3-70b-instruct-fp8-fast`)
 - **Workflow / coordination**: Cloudflare Workers (Hono framework for API routing)
 - **User input**: Cloudflare Workers Static Assets (serving a Vanilla JS + HTML/CSS UI, acts exactly like Pages)
+  - *Actually upgraded to a full React + Vite application for a premium interface!*
 - **Memory or state**: Cloudflare D1 (Serverless SQLite) to persistently store chat sessions and messages
 
 ## Prerequisites
@@ -18,7 +18,7 @@ The application is deployed and currently live at: **[https://cf_ai_chat.shubham
 
 ## Running Locally
 
-1. Install dependencies:
+1. Install root dependencies:
    ```sh
    npm install
    ```
@@ -28,12 +28,12 @@ The application is deployed and currently live at: **[https://cf_ai_chat.shubham
    npm run db:init
    ```
 
-3. Start the local development server:
+3. Start the local development server (this concurrently runs both the Cloudflare Worker and the Vite React frontend):
    ```sh
    npm run dev
    ```
 
-4. Open your browser to `http://localhost:8787` to interact with the assignment!
+4. Open your browser to `http://localhost:5173` to interact with the application!
 
 ## Deployment (Optional)
 To deploy this project to your Cloudflare account, follow these steps:
